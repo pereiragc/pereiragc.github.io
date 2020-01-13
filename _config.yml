@@ -30,6 +30,7 @@ github_username:  pereiragc
 profile_picture: choice1.jpg
 
 # Build settings
+theme: academic-minima
 remote_theme: academicbio/academic-minima
 exclude:
    - Gemfile
