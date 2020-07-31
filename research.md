@@ -5,7 +5,7 @@ order: 2
 ---
 
 ## Work in progress
-Asset Pricing and Informal Labor Markets: A New Perspective <br />
+Informal Labor Markets and the Business Cycle: An Asset Pricing Perspective <br />
 with Livio Maya. *Draft coming soon.*
 
 A Welfare Analysis of Informality and Income Risk<br />
