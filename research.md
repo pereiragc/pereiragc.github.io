@@ -5,8 +5,12 @@ order: 2
 ---
 
 ## Work in progress
-Reassessing Fiscal Policy Models: the Role of Informality <br />
+Asset Pricing and Informal Labor Markets: A New Perspective <br />
 with Livio Maya. *Draft coming soon.*
+
+A Welfare Analysis of Informality and Income Risk<br />
+with Livio Maya. *Draft coming soon*
+
 
 ## Publications
 
