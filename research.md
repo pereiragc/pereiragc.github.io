@@ -5,7 +5,7 @@ order: 2
 ---
 
 ## Job market paper
-**Risk Premia, Informality and the Business Cycle** <br />
+**Risk Premia, Informality and the Business Cycle** (draft coming soon) <br />
 with Livio Maya. 
 
 *Abstract.*  This paper introduces the idea that the breakdown of the workforce into formal and informal jobs is akin to an aggregate portfolio choice. The decision to formalize trades off the higher productivity of formal workers with the risk of not being able to fire them due to large regulatory costs. We embed this payoff structure in a business cycle search model with formality choice by employers, who assess the value of a match using discount rates that allow for a time-varying price of risk. We calibrate the model with data from Brazil. The model produces two main patterns: a payoff effect that makes informal firms’ firing sensitive to the business cycle, and a portfolio rebalancing effect, whereby a higher price of risk during downturns induces firms to shift their hiring towards informal workers. The model-predicted cyclicality of transitions from unemployment to formal and informal jobs, as well as the cyclicality of transitions to unemployment – both of which we do not target in our estimation – are consistent with the data. The predictions are at odds with the data when the model is calibrated with constant discount rates. The results indicate that properly accounting for the price of risk is essential for understanding the dynamics of the informal sector.
