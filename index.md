@@ -2,7 +2,7 @@
 layout: home
 ---
 
-Welcome! I'm a fifth year PhD student in the Economics
+Welcome! I'm a sixth year PhD student in the Economics
 Department at Columbia University. My main fields of interest are Macroeconomics
 and Public Economics.
 

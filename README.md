@@ -13,4 +13,15 @@ instead of the suggested
 theme: academic_minima
 ```
 
+## Building/serving
+
+To build: 
+```shell
+bundle exec jekyll build --watch
+```
+
+To serve:
+```shell
+bundle exec jekyll serve --watch
+```
 
