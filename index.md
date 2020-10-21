@@ -9,4 +9,3 @@ My primary field is *Macroeconomics* and my research stresses the importance of 
 I am also interested in Computational Economics and International Finance.
 
 * [Research](research.html)
-* [CV](https://github.com/pereiragc/CV_academic/raw/orphan/GustavoPereira.pdf)
