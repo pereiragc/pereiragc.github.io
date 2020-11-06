@@ -4,4 +4,4 @@ title: CV
 order: 3
 ---
 
-TBA
+[Download](pub-files/resume.pdf)
