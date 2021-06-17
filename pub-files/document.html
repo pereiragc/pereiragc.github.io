@@ -1,0 +1,6352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-17 Thu 15:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Documentation</title>
+<meta name="author" content="Gustavo Pereira" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Documentation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org03241bb">1. Dependencies</a></li>
+<li><a href="#orge3dc54c">2. Building the old PME panel</a>
+<ul>
+<li><a href="#org1bb04ac">2.1. Load data</a></li>
+<li><a href="#orge51a040">2.2. Checking for issues</a>
+<ul>
+<li><a href="#org4ef9670">2.2.1. Inferred states vs V10 vs UF</a></li>
+<li><a href="#orga290507">2.2.2. Inferred year vs ANO</a></li>
+<li><a href="#org6e491b9">2.2.3. Month columns</a></li>
+</ul>
+</li>
+<li><a href="#org4e1fe7e">2.3. Combining <code>person</code> and <code>household</code> datasets: example of 1995</a>
+<ul>
+<li><a href="#orgfe83b80">2.3.1. Sanity check: number of people in household</a></li>
+</ul>
+</li>
+<li><a href="#orge2d9a1e">2.4. Combining <code>person</code> and <code>household</code> pre-1990</a></li>
+<li><a href="#orgfd4e21d">2.5. Combining <code>person</code> and <code>household</code> for all old PME years</a>
+<ul>
+<li><a href="#org5cd833a">2.5.1. Sanity check with number of people in household</a></li>
+</ul>
+</li>
+<li><a href="#orgfd02131">2.6. Weights in PME</a>
+<ul>
+<li><a href="#orgf8a6b90">2.6.1. Fixing messy weights</a></li>
+<li><a href="#org4151bfb">2.6.2. Making sense of weights</a></li>
+<li><a href="#orgd1337c6">2.6.3. Reconciling post-90 weights with possible approach for pre-90</a></li>
+</ul>
+</li>
+<li><a href="#org5195f82">2.7. Age</a></li>
+<li><a href="#org747e855">2.8. Unemployment</a></li>
+</ul>
+</li>
+<li><a href="#org4b1290d">3. Issues</a>
+<ul>
+<li><a href="#org82db851">3.1. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-01 Tue] </span></span> Weird entries in PME 2000</a>
+<ul>
+<li><a href="#org36f101a">3.1.1. Issue</a></li>
+<li><a href="#org9537515">3.1.2. Analysis</a></li>
+</ul>
+</li>
+<li><a href="#orgbfede72">3.2. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-01 Tue] </span></span> Non-empty entries of V500 in PME 1999</a>
+<ul>
+<li><a href="#orgc302554">3.2.1. Analysis</a></li>
+</ul>
+</li>
+<li><a href="#org1710dd0">3.3. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-03 Thu] </span></span> Apparent impossibility of identifying person to household in PME99-2k</a></li>
+<li><a href="#orgd4373ce">3.4. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-10 Thu] </span></span> Weird values in column V10 for years 88-90</a></li>
+<li><a href="#org88a53f4">3.5. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-11 Fri] </span></span> Month columns in persons datasets: availability and weird values</a></li>
+<li><a href="#org6d5dbf4">3.6. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-13 Sun] </span></span> Malformed <code>V102</code> in persons datasets</a></li>
+<li><a href="#org7a3c390">3.7. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-13 Sun] </span></span> Recycling of household IDs</a></li>
+<li><a href="#org5576e59">3.8. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-14 Mon] </span></span> Messy weights</a></li>
+<li><a href="#org057ec9e">3.9. <span class="timestamp-wrapper"><span class="timestamp">[2021-06-14 Mon] </span></span> Absent weights for 1984-1990</a></li>
+</ul>
+</li>
+<li><a href="#orged81353">4. Tasks</a>
+<ul>
+<li><a href="#org145362d">4.1. <span class="done DONE">DONE</span> Identify people and households</a>
+<ul>
+<li><a href="#org446b93c">4.1.1. <span class="done DONE">DONE</span> Investigate quality of household/person match using number of people in household</a></li>
+</ul>
+</li>
+<li><a href="#org93ddef4">4.2. <span class="todo TODO">TODO</span> Track people over time</a></li>
+<li><a href="#orgafc3ada">4.3. <span class="todo TODO">TODO</span> Old PME: how to get weights</a></li>
+<li><a href="#org2b505b7">4.4. <span class="todo TODO">TODO</span> Old PME: how to compute totals using weights</a></li>
+<li><a href="#org0f9ba5c">4.5. Relevant variables and how to find them</a>
+<ul>
+<li><a href="#org295e25e">4.5.1. Defining employment</a></li>
+<li><a href="#org3b23e57">4.5.2. <span class="todo TODO">TODO</span> Defining income</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org03241bb" class="outline-2">
+<h2 id="org03241bb"><span class="section-number-2">1</span> Dependencies</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>data.table</li>
+<li>zoo</li>
+<li>ggplot2</li>
+<li>lubridate</li>
+<li>github.com/pereiragc/dtsnippets</li>
+<li>glue</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge3dc54c" class="outline-2">
+<h2 id="orge3dc54c"><span class="section-number-2">2</span> Building the old PME panel</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org1bb04ac" class="outline-3">
+<h3 id="org1bb04ac"><span class="section-number-3">2.1</span> Load data</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Below is a convenience function for loading PME data into memory. You can specify unit to be &ldquo;person&rdquo;, &ldquo;household&rdquo;, or any other string (which will load both). The timeframe can be 80s, 90s or both (by again specifying any other string.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+.pme_dir <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-style: italic;">"/home/gustavo/Dropbox/v2/data/PME/FullData"</span>
+
+<span style="font-weight: bold;">oldpmeread</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(unit = <span style="font-style: italic;">""</span>, timeframe = <span style="font-style: italic;">""</span>, pme_dir = .pme_dir) {
+  regex1 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">switch</span>(unit, <span style="font-style: italic;">"person"</span> = <span style="font-style: italic;">"person-"</span>,
+                   <span style="font-style: italic;">"household"</span> = <span style="font-style: italic;">"household-"</span>,
+                   <span style="font-style: italic;">"(person|household)-"</span>)
+  regex2 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">switch</span>(timeframe, <span style="font-style: italic;">"80s"</span> = <span style="font-style: italic;">"19(8.|90)"</span>,
+                   <span style="font-style: italic;">"90s"</span> = <span style="font-style: italic;">"(199[1-9]|2000)"</span>,
+                   <span style="font-style: italic;">"(19[0-9]{2}|2000)"</span>)
+
+  regex <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> paste0(regex1, regex2)
+
+  fff <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> list.files(.pme_dir, pattern = regex, full.names = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+
+  ldata <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> lapply(fff, <span style="font-weight: bold;">function</span>(fname) {
+
+    rrr <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-style: italic;">".*(person|household)-([0-9]{4})\\.csv"</span>
+    ftype <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> gsub(rrr, <span style="font-style: italic;">"\\1"</span>, fname)
+    year <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.integer(gsub(rrr, <span style="font-style: italic;">"\\2"</span>, fname))
+
+
+    DT <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.table::fread(fname)
+
+    DT[, .year := year]
+
+    <span style="font-weight: bold;">return</span>(list(
+      .year = year,
+      .unit = ftype,
+      DT = DT
+    ))
+  })
+  <span style="font-weight: bold;">return</span>(ldata)
+}
+
+</pre>
+</div>
+
+
+<p>
+For the examples that show up later in this documentation, I have to load some files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="org902b4e4">
+<span style="font-weight: bold; text-decoration: underline;">library</span>(ggplot2)
+<span style="font-weight: bold; text-decoration: underline;">library</span>(data.table)
+<span style="font-weight: bold; text-decoration: underline;">library</span>(dtsnippets)
+
+<span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">For some examples</span>
+hh95 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> fread(file.path(.pme_dir, <span style="font-style: italic;">"household-1995.csv"</span>))
+pp95 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> fread(file.path(.pme_dir, <span style="font-style: italic;">"person-1995.csv"</span>))
+
+pp_old <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rbindlist(lapply(oldpmeread(<span style="font-style: italic;">"person"</span>), <span style="font-weight: bold;">function</span>(ll) ll$DT), fill = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+hh_old <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rbindlist(lapply(oldpmeread(<span style="font-style: italic;">"household"</span>), <span style="font-weight: bold;">function</span>(ll) ll$DT), fill = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge51a040" class="outline-3">
+<h3 id="orge51a040"><span class="section-number-3">2.2</span> Checking for issues</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org4ef9670" class="outline-4">
+<h4 id="org4ef9670"><span class="section-number-4">2.2.1</span> Inferred states vs V10 vs UF</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+For years 1984-1990, state is present in column V10. The values were supposed to be
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">State</th>
+<th scope="col" class="org-right">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">11</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">21</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">33</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">41</td>
+</tr>
+
+<tr>
+<td class="org-left">PA</td>
+<td class="org-right">56</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">59</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+After 1990, the codes change to
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">PE</th>
+<th scope="col" class="org-right">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">26</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">29</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">31</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">33</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">35</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">43</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+(The column name also changes to UF)
+</p>
+
+
+<p>
+However, in 1988-1990 there are other values. Weird.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+countby(hh_old[.year == <span style="font-weight: bold; text-decoration: underline;">1988</span>], .x = <span style="font-style: italic;">".state"</span>, bycols = c(<span style="font-style: italic;">"V10"</span>))[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">V10</th>
+<th scope="col" class="org-right">.state = BA</th>
+<th scope="col" class="org-right">.state = MG</th>
+<th scope="col" class="org-right">.state = PE</th>
+<th scope="col" class="org-right">.state = RJ</th>
+<th scope="col" class="org-right">.state = RS</th>
+<th scope="col" class="org-right">.state = SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">103691</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1345</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">497</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">854</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">21</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">102352</td>
+</tr>
+
+<tr>
+<td class="org-right">22</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1062</td>
+</tr>
+
+<tr>
+<td class="org-right">23</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">343</td>
+</tr>
+
+<tr>
+<td class="org-right">24</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">558</td>
+</tr>
+
+<tr>
+<td class="org-right">25</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">606</td>
+</tr>
+
+<tr>
+<td class="org-right">26</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">335</td>
+</tr>
+
+<tr>
+<td class="org-right">27</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">105</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">429</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">83297</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">34</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1775</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1018</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">41</td>
+<td class="org-right">0</td>
+<td class="org-right">81771</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">42</td>
+<td class="org-right">0</td>
+<td class="org-right">915</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">56</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">66030</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">59</td>
+<td class="org-right">61414</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Create a flag for that: note that <code>oldpme_flag_bad_state</code> <b>has side-effects</b>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">'</span><span style="font-weight: bold; font-style: italic;"> Flag bad state values. HAS SIDE EFFECTS ON `hh_old`</span>
+<span style="font-weight: bold;">oldpme_flag_bad_state</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(hh_old, flagname = <span style="font-style: italic;">".flbadstate"</span>) {
+  valid_states_V10 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-weight: bold; text-decoration: underline;">11</span>, <span style="font-weight: bold; text-decoration: underline;">21</span>, <span style="font-weight: bold; text-decoration: underline;">33</span>, <span style="font-weight: bold; text-decoration: underline;">41</span>, <span style="font-weight: bold; text-decoration: underline;">56</span>, <span style="font-weight: bold; text-decoration: underline;">59</span>)
+  valid_states_UF <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-weight: bold; text-decoration: underline;">26</span>, <span style="font-weight: bold; text-decoration: underline;">29</span>, <span style="font-weight: bold; text-decoration: underline;">31</span>, <span style="font-weight: bold; text-decoration: underline;">33</span>, <span style="font-weight: bold; text-decoration: underline;">35</span>, <span style="font-weight: bold; text-decoration: underline;">43</span>)
+
+  hh_old[!is.na(V10), (flagname) := !(V10 <span style="font-weight: bold; text-decoration: underline;">%in%</span> valid_states_V10)]
+  hh_old[!is.na(UF), (flagname) := !(UF <span style="font-weight: bold; text-decoration: underline;">%in%</span> valid_states_UF)]
+
+}
+
+</pre>
+</div>
+
+<p>
+Let&rsquo;s check the extent of the problem:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+oldpme_flag_bad_state(hh_old)
+
+countby(hh_old, .x = <span style="font-style: italic;">".flbadstate"</span>, bycols = <span style="font-style: italic;">".year"</span>)[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">.flbadstate = FALSE</th>
+<th scope="col" class="org-right">.flbadstate = TRUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1984</td>
+<td class="org-right">543788</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1985</td>
+<td class="org-right">559749</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1986</td>
+<td class="org-right">560980</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1987</td>
+<td class="org-right">560825</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1988</td>
+<td class="org-right">498555</td>
+<td class="org-right">9842</td>
+</tr>
+
+<tr>
+<td class="org-right">1989</td>
+<td class="org-right">414260</td>
+<td class="org-right">10093</td>
+</tr>
+
+<tr>
+<td class="org-right">1990</td>
+<td class="org-right">421895</td>
+<td class="org-right">10891</td>
+</tr>
+
+<tr>
+<td class="org-right">1991</td>
+<td class="org-right">445988</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1992</td>
+<td class="org-right">449351</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1993</td>
+<td class="org-right">447479</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1994</td>
+<td class="org-right">436161</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1995</td>
+<td class="org-right">447844</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1996</td>
+<td class="org-right">463306</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1997</td>
+<td class="org-right">471013</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1998</td>
+<td class="org-right">481082</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1999</td>
+<td class="org-right">481770</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-right">489365</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orga290507" class="outline-4">
+<h4 id="orga290507"><span class="section-number-4">2.2.2</span> Inferred year vs ANO</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<div class="org-src-container">
+<pre class="src src-R">hh_old[, .flag_inconsistent_year := ANO != .year ]
+pp_old[, .flag_inconsistent_year := ANO != .year ]
+
+tab_ano_hh <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> countby(hh_old, .x = <span style="font-style: italic;">".flag_inconsistent_year"</span>, bycols = <span style="font-style: italic;">".year"</span>)
+tab_ano_pp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> countby(pp_old, .x = <span style="font-style: italic;">".flag_inconsistent_year"</span>, bycols = <span style="font-style: italic;">".year"</span>)
+
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-R">tab_ano_hh[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">.flag<sub>inconsistent</sub><sub>year</sub> = NA</th>
+<th scope="col" class="org-right">.flag<sub>inconsistent</sub><sub>year</sub> = FALSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1984</td>
+<td class="org-right">543788</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1985</td>
+<td class="org-right">559749</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1986</td>
+<td class="org-right">560980</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1987</td>
+<td class="org-right">560825</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1988</td>
+<td class="org-right">508397</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1989</td>
+<td class="org-right">424353</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1990</td>
+<td class="org-right">432786</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1991</td>
+<td class="org-right">0</td>
+<td class="org-right">445988</td>
+</tr>
+
+<tr>
+<td class="org-right">1992</td>
+<td class="org-right">0</td>
+<td class="org-right">449351</td>
+</tr>
+
+<tr>
+<td class="org-right">1993</td>
+<td class="org-right">0</td>
+<td class="org-right">447479</td>
+</tr>
+
+<tr>
+<td class="org-right">1994</td>
+<td class="org-right">0</td>
+<td class="org-right">436161</td>
+</tr>
+
+<tr>
+<td class="org-right">1995</td>
+<td class="org-right">0</td>
+<td class="org-right">447844</td>
+</tr>
+
+<tr>
+<td class="org-right">1996</td>
+<td class="org-right">0</td>
+<td class="org-right">463306</td>
+</tr>
+
+<tr>
+<td class="org-right">1997</td>
+<td class="org-right">0</td>
+<td class="org-right">471013</td>
+</tr>
+
+<tr>
+<td class="org-right">1998</td>
+<td class="org-right">0</td>
+<td class="org-right">481082</td>
+</tr>
+
+<tr>
+<td class="org-right">1999</td>
+<td class="org-right">0</td>
+<td class="org-right">481770</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-right">0</td>
+<td class="org-right">489365</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-R">tab_ano_pp[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">.flag<sub>inconsistent</sub><sub>year</sub> = NA</th>
+<th scope="col" class="org-right">.flag<sub>inconsistent</sub><sub>year</sub> = FALSE</th>
+<th scope="col" class="org-right">.flag<sub>inconsistent</sub><sub>year</sub> = TRUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1984</td>
+<td class="org-right">1396109</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1985</td>
+<td class="org-right">1390684</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1986</td>
+<td class="org-right">1395301</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1987</td>
+<td class="org-right">1395818</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1988</td>
+<td class="org-right">1252766</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1989</td>
+<td class="org-right">1061684</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1990</td>
+<td class="org-right">1084312</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1991</td>
+<td class="org-right">0</td>
+<td class="org-right">1096907</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1992</td>
+<td class="org-right">0</td>
+<td class="org-right">1049652</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1993</td>
+<td class="org-right">0</td>
+<td class="org-right">1058058</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1994</td>
+<td class="org-right">0</td>
+<td class="org-right">1077149</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1995</td>
+<td class="org-right">0</td>
+<td class="org-right">1084463</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1996</td>
+<td class="org-right">0</td>
+<td class="org-right">1086939</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1997</td>
+<td class="org-right">0</td>
+<td class="org-right">1099255</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1998</td>
+<td class="org-right">0</td>
+<td class="org-right">1110199</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1999</td>
+<td class="org-right">0</td>
+<td class="org-right">1100798</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-right">0</td>
+<td class="org-right">995803</td>
+<td class="org-right">861</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+<b>Conclusion.</b> Overall, it seems that this is a minor problem
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e491b9" class="outline-4">
+<h4 id="org6e491b9"><span class="section-number-4">2.2.3</span> Month columns</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+I see two month columns:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Mes da pesquisa</th>
+<th scope="col" class="org-left">&ldquo;mes de investigacao da pesquisa&rdquo;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">MES</th>
+<th scope="col" class="org-left">1991-2k</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">V105</th>
+<th scope="col" class="org-left">1984-1990</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Mes de referencia</td>
+<td class="org-left">&ldquo;mes da realizacao da pesquisa&rdquo;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">V2002</td>
+<td class="org-left">1984-2k</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+A few notes:
+</p>
+<ol class="org-ol">
+<li><p>
+<code>V2002</code> has no missing entries in the old pme sample:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">hh_old[, .(nna = sum(is.na(V2002)))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">nna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Same holds for <code>V105</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-R">hh_old[, .(nna = sum(is.na(V105)))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">nna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Whenever MES and V105 are defined, they are equal:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">hh_old[!is.na(M&#202;S), .(ndiff = sum(M&#202;S != V105))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">ndiff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+
+<p>
+Now, how do V105 and V2002 compare? Notes:
+</p>
+
+<ol class="org-ol">
+<li><p>
+They&rsquo;re definitely not the same:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[, sum(V105 != V2002, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">569170</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+The difference only exists when the interview is conducted in the early days of the month (day of the month is variable <code>V2001</code>)
+</p>
+<div class="org-src-container">
+<pre class="src src-R">hh_old[V2002 != V105][, .N, V2001][order(-N)]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">V2001</th>
+<th scope="col" class="org-right">N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">246123</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">187747</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">126451</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">8848</td>
+</tr>
+
+<tr>
+<td class="org-right">31</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+No idea why that 31st is there, probably an anomaly.
+</p></li>
+</ol>
+
+<p>
+<b>Conclusion.</b> Use column V105 for the month to which the answers pertain, and V2002 for the month in which  the research is conducted.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e1fe7e" class="outline-3">
+<h3 id="org4e1fe7e"><span class="section-number-3">2.3</span> Combining <code>person</code> and <code>household</code> datasets: example of 1995</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<a id="orgbf56b8e"></a>
+Note: see <a href="#orge2a3cec">3.3</a> for how the algorithm came about
+</p>
+
+
+<p>
+First, just a quick wrapper for pasting a given set of columns with a dash; whenever one of the columns is missing, that invalidates the id.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="font-weight: bold;">generate_key</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(dthh, keyvars = c(<span style="font-style: italic;">"V10"</span>, <span style="font-style: italic;">"V101"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>, <span style="font-style: italic;">"V106"</span>)) {
+  vkey <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Reduce(<span style="font-weight: bold;">function</span>(x,y) paste(x, y, sep = <span style="font-style: italic;">"-"</span>),
+                 dthh[, keyvars, with = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>])
+  vna <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> Reduce(<span style="font-weight: bold;">function</span>(x,y) x | y,
+                lapply(dthh[, keyvars, with = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>], is.na))
+
+  vkey[vna] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold; text-decoration: underline;">NA_character_</span>
+
+  <span style="font-weight: bold;">return</span>(vkey)
+}
+
+</pre>
+</div>
+
+
+<p>
+So, for example,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+hh95[, hhid := generate_key(.SD, c(<span style="font-style: italic;">"UF"</span>, <span style="font-style: italic;">"V101"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>, <span style="font-style: italic;">"V106"</span>))]
+
+hh95[<span style="font-weight: bold; text-decoration: underline;">1</span>:<span style="font-weight: bold; text-decoration: underline;">5</span>, .(UF, V101, V102, V103, V106, hhid)] <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show selected rows</span>
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">UF</th>
+<th scope="col" class="org-right">V101</th>
+<th scope="col" class="org-right">V102</th>
+<th scope="col" class="org-right">V103</th>
+<th scope="col" class="org-right">V106</th>
+<th scope="col" class="org-right">hhid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">31</td>
+<td class="org-right">14</td>
+<td class="org-right">310018</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">31-14-310018-1-1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">31</td>
+<td class="org-right">31</td>
+<td class="org-right">310018</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">31-31-310018-2-1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">31</td>
+<td class="org-right">49</td>
+<td class="org-right">310018</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">31-49-310018-3-1</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">31</td>
+<td class="org-right">66</td>
+<td class="org-right">310018</td>
+<td class="org-right">4</td>
+<td class="org-right">1</td>
+<td class="org-right">31-66-310018-4-1</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">31</td>
+<td class="org-right">83</td>
+<td class="org-right">310018</td>
+<td class="org-right">5</td>
+<td class="org-right">1</td>
+<td class="org-right">31-83-310018-5-1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+This is the key for merging people and households
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">key2 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">"UF"</span>, <span style="font-style: italic;">"M&#202;S"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>)
+</pre>
+</div>
+
+
+<p>
+Below I use <code>hhid2</code> as merging key between person and household datasets, and include <code>hhid</code> in the people data.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+hh95[, hhid2 := generate_key(.SD, key2)]
+pp95[, hhid2 := generate_key(.SD, key2)]
+pp95[hh95, hhid := hhid , on = <span style="font-style: italic;">"hhid2"</span>]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+
+</pre>
+</div>
+
+<p>
+Now let&rsquo;s see what we got.
+</p>
+</div>
+
+<div id="outline-container-orgfe83b80" class="outline-4">
+<h4 id="orgfe83b80"><span class="section-number-4">2.3.1</span> Sanity check: number of people in household</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Let&rsquo;s try some sanity checks on the merging procedure. In the household dataset, we observe the number of people in the household, as well as the number of people over 10 years old.
+</p>
+
+<p>
+So we take three random households in the data:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+set.seed(<span style="font-weight: bold; text-decoration: underline;">126</span>)
+hh_sample <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> pp95[, sample(unique(hhid), <span style="font-weight: bold; text-decoration: underline;">3</span>)]
+
+hh_sample
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">33-12-332127-1-4</td>
+</tr>
+
+<tr>
+<td class="org-right">29-45-29001030-9-3</td>
+</tr>
+
+<tr>
+<td class="org-right">43-12-432164-2-4</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+&#x2026;and get the number of people in the household
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+hh95[
+  V109 &gt; <span style="font-weight: bold; text-decoration: underline;">0</span>  <span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">avoid "bad" entries</span>
+][
+  hhid <span style="font-weight: bold; text-decoration: underline;">%in%</span> hh_sample,
+  .(number_people = V109[<span style="font-weight: bold; text-decoration: underline;">1</span>], number_ppl_above10 = V110[<span style="font-weight: bold; text-decoration: underline;">1</span>]),
+  hhid][
+  order(hhid)
+]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">hhid</th>
+<th scope="col" class="org-right">number<sub>people</sub></th>
+<th scope="col" class="org-right">number<sub>ppl</sub><sub>above10</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">29-45-29001030-9-3</td>
+<td class="org-right">5</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">33-12-332127-1-4</td>
+<td class="org-right">3</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">43-12-432164-2-4</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Now let&rsquo;s see the implied number of people based on the merge:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+pp95[hhid <span style="font-weight: bold; text-decoration: underline;">%in%</span> hh_sample, .(implied_n_people = length(unique(V201))), hhid][order(hhid)]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">hhid</th>
+<th scope="col" class="org-right">implied<sub>n</sub><sub>people</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">29-45-29001030-9-3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">33-12-332127-1-4</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">43-12-432164-2-4</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge2d9a1e" class="outline-3">
+<h3 id="orge2d9a1e"><span class="section-number-3">2.4</span> Combining <code>person</code> and <code>household</code> pre-1990</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<a id="org9657b0f"></a>
+The key to combine person and household is to use the columns (see <a href="#orge2a3cec">3.3</a>):
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Column</th>
+<th scope="col" class="org-left">Meaning</th>
+<th scope="col" class="org-left">Availability 80s</th>
+<th scope="col" class="org-left">Availability 90s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">UF [.state]</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">household, person</td>
+<td class="org-left">household, person</td>
+</tr>
+
+<tr>
+<td class="org-left">ANO [.year ]</td>
+<td class="org-left">year</td>
+<td class="org-left">household, person</td>
+<td class="org-left">household, person</td>
+</tr>
+
+<tr>
+<td class="org-left">MES [V(105)]</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">household</td>
+<td class="org-left">household, person</td>
+</tr>
+
+<tr>
+<td class="org-left">V102</td>
+<td class="org-left">survey area code</td>
+<td class="org-left">household</td>
+<td class="org-left">household, person</td>
+</tr>
+
+<tr>
+<td class="org-left">V103</td>
+<td class="org-left">household number within survey area</td>
+<td class="org-left">household</td>
+<td class="org-left">household, person</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+A few things to be decided:
+</p>
+<ol class="org-ol">
+<li>Which column to be used as month? <code>V105</code>, probably?
+<ul class="org-ul">
+<li>Since only <code>V105</code> shows up for persons dataset, there would be no hope if we used <code>V2002</code> instead.</li>
+</ul></li>
+<li>What about years &lt;= 1990?
+<ul class="org-ul">
+<li>We can take advantage of the fact that those years had the <code>household person person ...</code> format, so that the line in the file (kept in variable <code>n_entry</code>) identifies people with a household record.</li>
+<li>There are two ways of matching:
+<ol class="org-ol">
+<li>Use the <code>n_entry</code> variable directly, or</li>
+<li>Recover <code>V102</code> and <code>V103</code> with <code>n_entry</code>, then use the key above to recover the household id.</li>
+</ol></li>
+</ul></li>
+</ol>
+
+
+<p>
+First, set the household key in the household dataset (doing that for all years anyway):
+</p>
+<div class="org-src-container">
+<pre class="src src-R">keyhh <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> c(<span style="font-style: italic;">".state"</span>, <span style="font-style: italic;">"V101"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>, <span style="font-style: italic;">"V106"</span>)
+
+hh_old[, hhid := generate_key(.SD, keyhh)]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+<p>
+Below:
+</p>
+<ul class="org-ul">
+<li>use <code>n_entry</code> when available to recover <code>V105</code>, <code>V102</code>, <code>V103</code>, <code>hhid</code>.
+<ul class="org-ul">
+<li>theoretically, we would not need to go farther than this.</li>
+<li>however, I want to compare the <code>hhid</code> obtained in such a way with the one obtained by generating the key</li>
+</ul></li>
+<li>So I generate the key that is used to merge people and households (which will be the method for 1991 onward)</li>
+<li>Finally, I use the person-household key to obtain another version of the household ID</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[hh_old[!is.na(n_entry)], <span style="color: #000000; background-color: #ffffff;">`:=`</span>(
+           V105m = V105,
+           V102m = i.V102,
+           V103m = i.V103,
+           hhidx = hhid
+), on = .(.state, .year, n_entry)]
+
+pp_old[, hh_pp_id  := generate_key(.SD, c(<span style="font-style: italic;">".state"</span>, <span style="font-style: italic;">".year"</span>, <span style="font-style: italic;">"V105m"</span>, <span style="font-style: italic;">"V102m"</span>, <span style="font-style: italic;">"V103m"</span>))]
+hh_old[, hh_pp_id := generate_key(.SD, c(<span style="font-style: italic;">".state"</span>, <span style="font-style: italic;">".year"</span>, <span style="font-style: italic;">"V105"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>))]
+
+pp_old[hh_old, hhidy := hhid, on = .(hh_pp_id)]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+<pre class="example">
+1
+</pre>
+
+
+<p>
+A few notes:
+</p>
+<ul class="org-ul">
+<li>since <code>V102</code> exists in persons datasets after 1990, I have to use <code>i.V102</code> to indicate that I want the one coming from <code>hh_old</code>. If I used <code>V102m = V102</code>, I&rsquo;d pull from <code>pp_old</code>, which would be a vector of missing values!</li>
+<li>I append &ldquo;x&rdquo; to &ldquo;hhid&rdquo; because I will compare with another join method.</li>
+<li>The <code>n_entry</code> identifies rows only up to year and state (since there is a single file per year/state in the 1980s)</li>
+</ul>
+
+
+<p>
+So: are the IDs the same?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[, .(different_ids_count = sum(hhidx != hhidy, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">different<sub>ids</sub><sub>count</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+YES!
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd4e21d" class="outline-3">
+<h3 id="orgfd4e21d"><span class="section-number-3">2.5</span> Combining <code>person</code> and <code>household</code> for all old PME years</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+In this section, I use what I learned in the two prior sections to create a specific function that adds a key to join person/household to the datasets.
+</p>
+
+<p>
+First, I remove the columns I created while exploring the keying in the above sections.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">pp_old[, c(<span style="font-style: italic;">"hh_pp_id"</span>, <span style="font-style: italic;">"hhidx"</span>, <span style="font-style: italic;">"hhidy"</span>, <span style="font-style: italic;">"V105m"</span>, <span style="font-style: italic;">"V102m"</span>, <span style="font-style: italic;">"V103m"</span>) := <span style="font-weight: bold; text-decoration: underline;">NULL</span>]
+hh_old[, c(<span style="font-style: italic;">"hh_pp_id"</span>, <span style="font-style: italic;">"hhid"</span>):= <span style="font-weight: bold; text-decoration: underline;">NULL</span>]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+
+<p>
+Let me try now to apply my combined wisdom:
+</p>
+
+<ol class="org-ol">
+<li><p>
+I can easily create a household ID
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[, hhid := generate_key(.SD, c(<span style="font-style: italic;">".state"</span>, <span style="font-style: italic;">"V101"</span>, <span style="font-style: italic;">"V102"</span>, <span style="font-style: italic;">"V103"</span>, <span style="font-style: italic;">"V106"</span>))]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div></li>
+
+<li><p>
+For <code>1984 &lt;= yyyy &lt;= 1990</code>, I can simply use the entry number to recover household id in person dataset.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[hh_old[!is.na(n_entry)], <span style="color: #000000; background-color: #ffffff;">`:=`</span>(hhid = hhid, V105 = V105),
+       on = .(.state, .year, n_entry)]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div></li>
+
+<li><p>
+As far as the new years are concerned, there is an issue with V102 documented in <a href="#org702320d">3.6</a> that needs to be dealt with.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[!grepl(<span style="font-style: italic;">"\\d{6,8}"</span>, V102), V102 := <span style="font-weight: bold; text-decoration: underline;">NA_character_</span>]
+pp_old[, V102 := as.integer(V102)]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div></li>
+
+<li><p>
+For the other years, I use the variables in <a href="#org9657b0f">2.4</a> in order to fetch the id.
+</p>
+
+<p>
+(In order for me to do that, I first have to match the column <code>V105</code> name
+[ <code>MÊS =&gt; V105</code> ].)
+</p>
+<div class="org-src-container">
+<pre class="src src-R">pp_old[is.na(n_entry), V105 := M&#202;S][]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div></li>
+</ol>
+
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[hh_old[is.na(n_entry)], hhid := i.hhid,
+       on = .(.year, .state, V105, V102, V103)]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5cd833a" class="outline-4">
+<h4 id="org5cd833a"><span class="section-number-4">2.5.1</span> Sanity check with number of people in household</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<div class="org-src-container">
+<pre class="src src-R">dt_test <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> hh_old[pp_old[, .(implied_n_people = length(unique(V201))),
+                         .(.year, hhid, V105)],
+                  .(hhid, nppl_gt10yo = V110, impl_nppl = implied_n_people),
+                  on = .(hhid, .year, V105)]
+
+dt_test[, sum(impl_nppl != nppl_gt10yo, na.rm= <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)]
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre>
+
+
+<p>
+Breaking down what I do above:
+</p>
+
+<ul class="org-ul">
+<li>For each (household ID, year, month) triple, I:
+<ol class="org-ol">
+<li>Use &ldquo;person&rdquo; dataset to compute the implied number of people by going on that year/month/hhid and fetching the length of <code>V201</code> [the &ldquo;person number&rdquo; column]
+
+<ul class="org-ul">
+<li>That becomes <code>impl_nppl</code></li>
+</ul></li>
+<li>Use the variable <code>V110</code> from the household dataset which counts the number of people above 10 years old in the household in the year/month
+<ul class="org-ul">
+<li>That becomes <code>nppl_gt10yo</code></li>
+</ul></li>
+</ol></li>
+
+<li>I then test for how many household IDs are <code>impl_nppl</code> and <code>nppl_gt10yo</code> different and find a single instance of that anomaly</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd02131" class="outline-3">
+<h3 id="orgfd02131"><span class="section-number-3">2.6</span> Weights in PME</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-orgf8a6b90" class="outline-4">
+<h4 id="orgf8a6b90"><span class="section-number-4">2.6.1</span> Fixing messy weights</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+The first thing I do is to come up with a function that tries to reasonably
+recover weights from messy data.
+</p>
+
+<p>
+I take each state/year/month and select the &ldquo;integer-like value&rdquo; [see the
+regular expression in the function] that shows up most often.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold;">oldpme_getweights</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(pp_old) {
+  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pp_old[, (newcname) := ifelse(grepl("^\\d+$", PESO), as.integer(PESO), NA)]</span>
+
+  dtw0 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> pp_old[!is.na(PESO), .(.w = as.integer(grep(<span style="font-style: italic;">"^\\d+$"</span>, PESO, value = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)),
+                     N = .N),
+                 .(.year, .state, V105)]
+
+  dtw0[, .freq := .N, .(.year, .state, V105, .w)]
+
+  anomalous_years <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> paste(dtw0[.freq != N, unique(.year)], collapse = <span style="font-style: italic;">", "</span>)
+
+  <span style="font-weight: bold;">if</span> (!(length(anomalous_years) == <span style="font-weight: bold; text-decoration: underline;">0</span>)) {
+    <span style="font-weight: bold; text-decoration: underline;">message</span>(glue::glue(<span style="font-style: italic;">"[oldpme_getweights] Found anomalies in years: {anomalous_years}"</span>))
+  }
+
+  dtw0[, .(.w = .w[which.max(.freq)]), .(.year, .state, V105)]
+}
+</pre>
+</div>
+
+
+<p>
+Let&rsquo;s see where that leads to different results relative to brute force conversion.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+dtweights <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> oldpme_getweights(pp_old)
+
+pp_old[, PESOm := as.integer(PESO)]
+
+dtweights[pp_old, on = .(.year, .state, V105)][PESOm != .w, .(PESOm = unique(PESOm)), .(.year, .state, V105, .w)]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-left">.state</th>
+<th scope="col" class="org-right">V105</th>
+<th scope="col" class="org-right">.w</th>
+<th scope="col" class="org-right">PESOm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">4010</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">940</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">601248</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">751120190</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">1240</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">57</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">24560</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">501244</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">201240</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">74148</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">451014</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">17</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">201144</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">801248</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">200124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">900093906</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">361116</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">136111</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">220124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">222222222</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">180124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">22</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">34</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">16</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">3</td>
+<td class="org-right">190</td>
+<td class="org-right">20</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">190</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">222222222</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">38</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">60104</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">220124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">200124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">45101</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">136114</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">900093906</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">6174204</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">64582</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">205482</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">150124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">162622</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">75171584</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">64622</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">123403</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">342111</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">180124</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">184458972</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">799072</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">6033225</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">8454365</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">1424522</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">80</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">30036</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">600063</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">34</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">322300</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">2934</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">22</td>
+<td class="org-right">4</td>
+<td class="org-right">322400</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">190</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">190</td>
+<td class="org-right">22</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">190</td>
+<td class="org-right">222222222</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">190</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">190</td>
+<td class="org-right">16</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">29</td>
+<td class="org-right">2</td>
+<td class="org-right">190</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">29</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-left">BA</td>
+<td class="org-right">0</td>
+<td class="org-right">12120000</td>
+<td class="org-right">172120000</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+So it seems that everything comes down to Bahia, in March 2000, having many entries fixed&#x2026;
+</p>
+
+
+<p>
+I add the constructed weights to <code>hh_old</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+hh_old[dtweights, .weight := .w, on = .(.year, .state, V105) ]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4151bfb" class="outline-4">
+<h4 id="org4151bfb"><span class="section-number-4">2.6.2</span> Making sense of weights</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+Now, I want to test whether the construction of weights follows this quote:
+</p>
+
+<blockquote>
+<p>
+Os pesos para expansão das amostras da PME são obtidos pela razão entre a estimativa de população residente e o total de moradores (V109) obtido na amostra da PME. O peso é único por região metropolitana e varia a cada mês de pesquisa.
+</p>
+</blockquote>
+
+<p>
+(Free translation: &ldquo;expansion weights = estimate of resident population / total of dwellers in sample [V109]; weights are unique by MSU and vary each survey month&rdquo;)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">dtnppl <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> hh_old[, .(estimate_pop = unique(V600)[<span style="font-weight: bold; text-decoration: underline;">1</span>],
+                     total_ppl_sample = sum(V109, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>),
+                     .weight = .weight[<span style="font-weight: bold; text-decoration: underline;">1</span>]), .(.year, .state, V105)]
+
+dtnppl[, .weight_implied := estimate_pop / total_ppl_sample]
+
+ggplot(dtnppl, aes(x = .weight, y = .weight_implied, colour = .state)) +
+  geom_point(alpha = <span style="font-weight: bold; text-decoration: underline;">0.8</span>, shape = <span style="font-weight: bold; text-decoration: underline;">1</span>, size = <span style="font-weight: bold; text-decoration: underline;">4</span>) + scale_colour_brewer(palette = <span style="font-style: italic;">"Set2"</span>) +
+  geom_abline(slope = <span style="font-weight: bold; text-decoration: underline;">1</span>, intercept = <span style="font-weight: bold; text-decoration: underline;">0</span>, linetype = <span style="font-weight: bold; text-decoration: underline;">2</span>) + theme_bw()
+
+</pre>
+</div>
+
+
+<div id="orgeb0f7a5" class="figure">
+<p><img src="output/weights_comparison.png" alt="weights_comparison.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1337c6" class="outline-4">
+<h4 id="orgd1337c6"><span class="section-number-4">2.6.3</span> Reconciling post-90 weights with possible approach for pre-90</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<div class="org-src-container">
+<pre class="src src-R">dtnppl[, d := zoo::as.yearmon(paste(.year, V105, sep = <span style="font-style: italic;">"-"</span>))]
+
+ggplot(dtnppl[.state != <span style="font-style: italic;">"BR"</span>], aes(x = d, y = total_ppl_sample, colour = .state)) + geom_line() +
+  scale_colour_brewer(palette = <span style="font-style: italic;">"Set2"</span>) + theme_bw() + ylab(<span style="font-style: italic;">"Number of people in surveyed households"</span>) + xlab(<span style="font-style: italic;">"Month"</span>)
+</pre>
+</div>
+
+<p>
+<a href="output/people_in_sample.pdf">output/people_in_sample.pdf</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">dt_tot <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> dtnppl[, .(total = sum(total_ppl_sample)), .(d)]
+
+ggplot(dt_tot, aes(x = d, y = total)) + geom_line() +
+  scale_colour_brewer(palette = <span style="font-style: italic;">"Set2"</span>) + theme_bw() + ylab(<span style="font-style: italic;">"Number of people in surveyed households (all states)"</span>) + xlab(<span style="font-style: italic;">"Month"</span>)
+</pre>
+</div>
+
+<p>
+<a href="output/people_in_sample_total.pdf">output/people_in_sample_total.pdf</a>
+</p>
+
+<p>
+As expected, there is something happening with the number of people in the sample. I think the table from the documentation might make sense after all. For that reason, I try the following:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"RJ"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">200</span>]
+hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"SP"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">300</span>]
+hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"RS"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">100</span>]
+hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"MG"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">100</span>]
+hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"PE"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">100</span>]
+hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span> &amp; .state == <span style="font-style: italic;">"BA"</span>, .weight := <span style="font-weight: bold; text-decoration: underline;">100</span>]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+
+<p>
+Note that with the weight and the nubmer of people in interviewed households, we can estimate back the population.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">dtnppl[hh_old, .weight := i..weight, on =.(.year, .state, V105)]
+dtnppl[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span>, estimate_pop_pre90 := total_ppl_sample * .weight]
+
+pop_compare <span style="font-weight: bold; text-decoration: underline;">&lt;-</span>
+  melt(dtnppl[, .(.state, d, estimate_pop, estimate_pop_pre90)], id.vars = c(<span style="font-style: italic;">"d"</span>, <span style="font-style: italic;">".state"</span>))
+
+ggplot(pop_compare, aes(x = d, y = value, colour = .state, linetype = variable)) +
+  geom_line() + scale_colour_brewer(palette = <span style="font-style: italic;">"Set2"</span>) + theme_bw()
+</pre>
+</div>
+
+<p>
+<a href="output/pop_estimates.pdf">output/pop_estimates.pdf</a>
+</p>
+
+<p>
+What a miserable failure.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5195f82" class="outline-3">
+<h3 id="org5195f82"><span class="section-number-3">2.7</span> Age</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+PME stores &ldquo;estimated ages&rdquo; (when the respondent is not sure about birth year, or even about their age) in two different columns: <code>V256</code> and <code>V246</code>.
+</p>
+
+<p>
+Note that V246 is the same column that records the birth year of the person. Each entry of that column is supposed to be three characters, and whenever the three characters start with a zero [AND <code>V206 = 00</code> AND <code>V236 = 20</code> &#x2013; which I don&rsquo;t factor in below ],  the number is suppoosed to represent a guess, either by the respondent or the interviewer.
+</p>
+
+<p>
+<code>V256</code> is described as &ldquo;estimated age&rdquo;, but lacks a full documentation. At the end of the day, if <code>V246</code> results in a missing and we have something on <code>V256</code>, I use <code>V256</code>. If V246 and V256 are both defined, but disagree (which happen very very infrequently), I assign a missing value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold;">oldpme_ageestimate</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(vday, vmonth, vyear, vage) {
+  N <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> length(vday)
+
+  vyear_int <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.integer(vyear)
+  vmonth_int <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.integer(vmonth)
+  vday_int <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.integer(vday)
+
+  vyear_age_idx <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rep(<span style="font-weight: bold; text-decoration: underline;">FALSE</span>, N)
+  vyear_age_idx[!is.na(vyear_int) &amp; vyear_int &lt; <span style="font-weight: bold; text-decoration: underline;">98</span>] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold; text-decoration: underline;">TRUE</span>
+
+  estimated_ages <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rep(<span style="font-weight: bold; text-decoration: underline;">NA</span>, N)
+  estimated_ages[vyear_age_idx] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> vyear_int[vyear_age_idx]
+
+  estimated_ages2 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.integer(vage)
+  estimated_ages2[!is.na(vage) &amp; estimated_ages2 &gt; <span style="font-weight: bold; text-decoration: underline;">98</span>] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold; text-decoration: underline;">NA</span>
+
+
+  estimated_ages[is.na(estimated_ages)] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> estimated_ages2[is.na(estimated_ages)]
+
+
+  <span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">Where the two ages differ, replace with NA</span>
+
+  estimated_ages[estimated_ages != estimated_ages2] <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold; text-decoration: underline;">NA</span>
+
+  <span style="font-weight: bold;">return</span>(list(
+    estimated_ages
+  ))
+}
+</pre>
+</div>
+
+
+<p>
+The function below builds the birthday in each record.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold;">oldpme_bday</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(vday, vmonth, vyear) {
+  built_date <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> as.IDate(
+    lubridate::fast_strptime(paste(paste0(<span style="font-weight: bold; text-decoration: underline;">1</span>, vyear), vmonth, vday, sep = <span style="font-style: italic;">"-"</span>),
+                             <span style="font-style: italic;">"%Y-%m-%d"</span>)
+    )
+}
+</pre>
+</div>
+
+<p>
+The function below computes the age based on interview date and a vector of birth dates.
+</p>
+
+<p>
+Let&rsquo;s add them to our data.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[, .ageestimate := oldpme_ageestimate(V206, V236, V246, V256)]
+pp_old[, .bdate := oldpme_bday(V206, V236, V246)]
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+
+<p>
+Now, I recover interview day/month from the household dataset, and use that to compute an inferred age column.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+pp_old[hh_old, .iviewdate :=
+           as.IDate(lubridate::fast_strptime(paste(.year, V2002, V2001,
+                                                  sep = <span style="font-style: italic;">"-"</span>),
+                                            format = <span style="font-style: italic;">"%Y-%m-%d"</span>)),
+       on = .(hhid, V105)]
+
+pp_old[, .inferred_age := dtsnippets::age_calc(.bdate, .iviewdate),
+       .iviewdate]
+
+</pre>
+</div>
+
+
+<p>
+The final work is to settle on a single workable age column. I do that below.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+pp_old[.ageestimate == .inferred_age, .age := .inferred_age]
+pp_old[is.na(.ageestimate) &amp; !is.na(.inferred_age) &amp;
+       .inferred_age &lt; <span style="font-weight: bold; text-decoration: underline;">98</span>, .age := .inferred_age]
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+
+<p>
+That basically does the following:
+</p>
+
+<ul class="org-ul">
+<li>When estimated age concurs with inferred age, use that</li>
+<li>When there is no estimated age, but there is inferred age, use inferred age, as long as inferred age is below 98 [people above 120yo who are currently attending school: we see you there! great achievement! but we&rsquo;re not counting you in our sample&#x2026;]</li>
+</ul>
+
+<p>
+With that procedure, we get a total of <code>96.3306587637139</code> percent entries with a valid age.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org747e855" class="outline-3">
+<h3 id="org747e855"><span class="section-number-3">2.8</span> Unemployment</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Here I try to come up with a reasonable definition of unemployment, and will contrast the outcome with official statistics.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+cc <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> intersect(c(<span style="font-style: italic;">".PIA"</span>, <span style="font-style: italic;">"occup"</span>, <span style="font-style: italic;">"labor_force"</span>), colnames(pp_old))
+
+pp_old[, cc := <span style="font-weight: bold; text-decoration: underline;">NULL</span>]
+
+
+pp_old[, .PIA := .age &gt;= <span style="font-weight: bold; text-decoration: underline;">10</span>]
+pp_old[V301 <span style="font-weight: bold; text-decoration: underline;">%in%</span> c(<span style="font-weight: bold; text-decoration: underline;">1</span>,<span style="font-weight: bold; text-decoration: underline;">2</span>), <span style="color: #000000; background-color: #ffffff;">`:=`</span>(occup = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>,
+                              labor_force = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)]
+pp_old[V301 == <span style="font-weight: bold; text-decoration: underline;">3</span>, <span style="color: #000000; background-color: #ffffff;">`:=`</span>(labor_force = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>,
+                       occup = <span style="font-weight: bold; text-decoration: underline;">FALSE</span>)]
+
+pp_old[V301 <span style="font-weight: bold; text-decoration: underline;">%between%</span> c(<span style="font-weight: bold; text-decoration: underline;">5</span>,<span style="font-weight: bold; text-decoration: underline;">7</span>) &amp; .PIA == <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, labor_force := (V313 == <span style="font-weight: bold; text-decoration: underline;">1</span>)]
+
+pp_old[V301 <span style="font-weight: bold; text-decoration: underline;">%between%</span> c(<span style="font-weight: bold; text-decoration: underline;">5</span>,<span style="font-weight: bold; text-decoration: underline;">7</span>)  &amp; V313 == <span style="font-weight: bold; text-decoration: underline;">1</span> &amp; .PIA == <span style="font-weight: bold; text-decoration: underline;">TRUE</span>, occup := <span style="font-weight: bold; text-decoration: underline;">FALSE</span>]
+
+
+<span style="font-weight: bold; text-decoration: underline;">1</span>
+</pre>
+</div>
+
+
+<p>
+What does the unemployment rate look like? Weighted and unweighted
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+dt_unemp_0 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> pp_old[, .(unemp = mean(!occup, na.rm=<span style="font-weight: bold; text-decoration: underline;">TRUE</span>)),
+                      .(.state, .year, V105)]
+
+dt_unemp_0[hh_old, .weight := .weight, on = .(.state, .year, V105)]
+
+
+dt_unemp_0 <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> dt_unemp_0[, .(<span style="color: #000000; background-color: #ffffff;">`Constructed (weighted)`</span> = mean(unemp * .weight, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>) / mean(.weight, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>),
+                             <span style="color: #000000; background-color: #ffffff;">`Constructed (unweighted)`</span> = mean(unemp, na.rm = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)), .(.year, V105)]
+
+
+dt_unemp <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> melt(dt_unemp_0,
+                 id.vars = c(<span style="font-style: italic;">".year"</span>, <span style="font-style: italic;">"V105"</span>),
+                 value.name = <span style="font-style: italic;">"unemp_rate"</span>,
+                 variable.name = <span style="font-style: italic;">"Series"</span>)
+
+dt_unemp[, unemp_rate := <span style="font-weight: bold; text-decoration: underline;">100</span> * unemp_rate]
+
+
+dt_unemp[, .SD[<span style="font-weight: bold; text-decoration: underline;">1</span>:<span style="font-weight: bold; text-decoration: underline;">2</span>] , Series]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Series</th>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">V105</th>
+<th scope="col" class="org-right">unemp<sub>rate</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Constructed (weighted)</td>
+<td class="org-right">1984</td>
+<td class="org-right">1</td>
+<td class="org-right">8.29220007043393</td>
+</tr>
+
+<tr>
+<td class="org-left">Constructed (weighted)</td>
+<td class="org-right">1984</td>
+<td class="org-right">2</td>
+<td class="org-right">8.95364395454162</td>
+</tr>
+
+<tr>
+<td class="org-left">Constructed (unweighted)</td>
+<td class="org-right">1984</td>
+<td class="org-right">1</td>
+<td class="org-right">8.3092129972638</td>
+</tr>
+
+<tr>
+<td class="org-left">Constructed (unweighted)</td>
+<td class="org-right">1984</td>
+<td class="org-right">2</td>
+<td class="org-right">9.04511497777713</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+above, just an example of how it looks like&#x2026; Now I download official unemployment data.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-R">unemp_official <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> melt(data.table::fread(<span style="font-style: italic;">"docs/ibge-unemp.csv"</span>,
+                                         colClasses = list(character = <span style="font-style: italic;">"Ano"</span>)),
+                       id.vars = <span style="font-style: italic;">"Ano"</span>)
+
+unemp_official[as.integer(Ano) <span style="font-weight: bold; text-decoration: underline;">%between%</span> c(<span style="font-weight: bold; text-decoration: underline;">80</span>, <span style="font-weight: bold; text-decoration: underline;">99</span>), Ano := paste0(<span style="font-style: italic;">"19"</span>, Ano)]
+unemp_official[nchar(Ano) == <span style="font-weight: bold; text-decoration: underline;">2</span>, Ano := paste0(<span style="font-style: italic;">"20"</span>, Ano)]
+unemp_official[, Ano := as.integer(Ano)]
+
+setnames(unemp_official, c(<span style="font-style: italic;">"Ano"</span>, <span style="font-style: italic;">"variable"</span>, <span style="font-style: italic;">"value"</span>), c(<span style="font-style: italic;">".year"</span>, <span style="font-style: italic;">"V105"</span>, <span style="font-style: italic;">"unemp_rate"</span>))
+
+unemp_official[, Series := <span style="font-style: italic;">"IBGE (official)"</span>]
+
+
+unemp_official[<span style="font-weight: bold; text-decoration: underline;">1</span>:<span style="font-weight: bold; text-decoration: underline;">5</span>]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">V105</th>
+<th scope="col" class="org-right">unemp<sub>rate</sub></th>
+<th scope="col" class="org-left">Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1983</td>
+<td class="org-right">1</td>
+<td class="org-right">6.3</td>
+<td class="org-left">IBGE (official)</td>
+</tr>
+
+<tr>
+<td class="org-right">1984</td>
+<td class="org-right">1</td>
+<td class="org-right">7.45</td>
+<td class="org-left">IBGE (official)</td>
+</tr>
+
+<tr>
+<td class="org-right">1985</td>
+<td class="org-right">1</td>
+<td class="org-right">6.31</td>
+<td class="org-left">IBGE (official)</td>
+</tr>
+
+<tr>
+<td class="org-right">1986</td>
+<td class="org-right">1</td>
+<td class="org-right">4.18</td>
+<td class="org-left">IBGE (official)</td>
+</tr>
+
+<tr>
+<td class="org-right">1987</td>
+<td class="org-right">1</td>
+<td class="org-right">3.19</td>
+<td class="org-left">IBGE (official)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>
+Now I combine these two and plot!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+dt_unemp_plot <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rbind(dt_unemp, unemp_official)
+dt_unemp_plot[, Date := zoo::as.yearmon(paste(.year, V105, sep = <span style="font-style: italic;">"-"</span>))]
+
+dt_unemp_plot <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> dt_unemp_plot[!is.na(Date)]
+
+ggplot(dt_unemp_plot, aes(x = Date, y = unemp_rate, colour = Series)) + geom_line(size = <span style="font-weight: bold; text-decoration: underline;">1.2</span>) + scale_colour_brewer(palette = <span style="font-style: italic;">"Set2"</span>) + theme_bw() + theme(legend.position = <span style="font-style: italic;">"bottom"</span>)
+
+</pre>
+</div>
+
+
+<div id="orgc464e9f" class="figure">
+<p><img src="output/unemployment_rate.png" alt="unemployment_rate.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b1290d" class="outline-2">
+<h2 id="org4b1290d"><span class="section-number-2">3</span> Issues</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org82db851" class="outline-3">
+<h3 id="org82db851"><span class="section-number-3">3.1</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-01 Tue] </span></span> Weird entries in PME 2000</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org36f101a" class="outline-4">
+<h4 id="org36f101a"><span class="section-number-4">3.1.1</span> Issue</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>In the <code>person</code> dataset, variable V500 should be a blank line, but that fails to happen</li>
+<li>Evidence: extract person dataset for year 2000 (from raw data), check out following lines of <code>PME2KBAP.TXT</code>:
+<ul class="org-ul">
+<li><p>
+31732
+</p>
+<blockquote>
+<p>
+2920000329000920040111110808   8      017  032120000003801344                            6   3955134211361742054  0000000501018                                          6114335 0310             000000190
+</p>
+</blockquote>
+<ol class="org-ol">
+<li>More than 137 characters (which should be  max)</li>
+<li>Characters 115 to 128 should be blank, but instead we have &ldquo;0000000501018 &rdquo;</li>
+</ol></li>
+<li><p>
+35269
+</p>
+<blockquote>
+<p>
+292060                        34                          4               0000329010920150135    0 90060 11111225963032401301041152  0003230322170                                                  0 2        022   0000329010920150135    0 900602315 0202068138  1301041152     022   06                         34                            000000190
+</p>
+</blockquote>
+<ol class="org-ol">
+<li>Again, line is too large</li>
+<li>Year (chrs 3-6) is 2060</li>
+<li>again, garbage where there should be a blank space</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9537515" class="outline-4">
+<h4 id="org9537515"><span class="section-number-4">3.1.2</span> Analysis</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>Only happens in Bahia</li>
+<li>Happens in <i>at least</i> 13% of observations (so substantial for that (state,year) pair)
+<ul class="org-ul">
+<li><p>
+This is found via
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(data.table)
+
+pme_dir <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-style: italic;">"/home/gustavo/Dropbox/v2/data/PME/FullData/"</span>
+DT <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.table::fread(file.path(pme_dir, <span style="font-style: italic;">"person-2000.csv"</span>))
+
+DT[V500 != <span style="font-style: italic;">""</span>][, .N] /  DT[.state == <span style="font-style: italic;">"BA"</span>][,.N]
+</pre>
+</div>
+
+<pre class="example">
+0.134287044701987
+</pre>
+
+
+<ul class="org-ul">
+<li>note that <code>fread</code> automatically trims whitespaces, so this finds all instances in which <code>V500</code> is different than whitespace</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbfede72" class="outline-3">
+<h3 id="orgbfede72"><span class="section-number-3">3.2</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-01 Tue] </span></span> Non-empty entries of V500 in PME 1999</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+According to PME, the value of <code>V500</code> should be all space characters; since <code>fread</code> trims whitespaces by default, and empty string is treated as missing, this means that <code>V500</code> should be read as a column of missing values.
+</p>
+</div>
+<div id="outline-container-orgc302554" class="outline-4">
+<h4 id="orgc302554"><span class="section-number-4">3.2.1</span> Analysis</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li><p>
+That now happens across states
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold; text-decoration: underline;">library</span>(data.table)
+
+pme_dir <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-style: italic;">"/home/gustavo/Dropbox/v2/data/PME/FullData/"</span>
+DT <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> data.table::fread(file.path(pme_dir, <span style="font-style: italic;">"person-1999.csv"</span>))
+
+DT[, .(prop = sum(V500 != <span style="font-style: italic;">""</span>) / .N), .state]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">0.0736372095514155</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">0.167435718846132</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">0.19549086573045</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">0.217595283567217</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">0.190769608158068</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">0.228151288335431</td>
+</tr>
+</tbody>
+</table></li>
+
+<li>However, the associated entries don&rsquo;t seem (from eyeballing) too weird. For example, the weights associated with problematic entries are within the range of other entries (this is important because the weight entries come after <code>V500</code>)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1710dd0" class="outline-3">
+<h3 id="org1710dd0"><span class="section-number-3">3.3</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-03 Thu] </span></span> Apparent impossibility of identifying person to household in PME99-2k</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<a id="orge2a3cec"></a>
+The identifiers of households (at least according to Ribas and Soares, 2008) in the OLD PME is the following:
+</p>
+
+<p>
+household id = V010 + V101 + V102 + V103 + V106
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">v010</td>
+<td class="org-left">UF</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">v101</td>
+<td class="org-left">Numero no 2.02/3.03</td>
+<td class="org-left">&ldquo;identifies selected household unit in listing instruments&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">v102</td>
+<td class="org-left">Numero de controle</td>
+<td class="org-left">&ldquo;identifies survey area code&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">v103</td>
+<td class="org-left">numero de serie</td>
+<td class="org-left">&ldquo;corresponds number of the household selected within each investigated area&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">v106</td>
+<td class="org-left">remessa</td>
+<td class="org-left">&ldquo;identifies survey periods in accordance with &lsquo;Periods for PME&rsquo; table;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">codes 1-4 according to survey interview week&ldquo;</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+However, variables <code>V101</code>, <code>V106</code> aren&rsquo;t not available on persons databases!
+</p>
+
+<p>
+Of the variables above, only <code>V10</code> [UF], <code>V102</code> and <code>V103</code> are available. But that is not sufficient to uniquely identify households:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">Create household IDs including / excluding V101 &amp; V106</span>
+hh95[, <span style="color: #000000; background-color: #ffffff;">`:=`</span>(hhid1 = paste(UF, V101, V102, V103, V106, sep = <span style="font-style: italic;">"-"</span>),
+            hhid2 = paste(UF, V102, V103, sep = <span style="font-style: italic;">"-"</span>))]
+
+
+hh95[, .(n_unique_id1 = length(unique(hhid1))), hhid2][, .(freq = .N), n_unique_id1]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">17855</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">18444</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">274</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">39158</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">652</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">18</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Above shows that there are 17855 instances of <code>hhid2</code> (i.e., the one excluding V101 and V106) that match with 3 <code>hhid1</code>.
+</p>
+
+<p>
+However, looking at some examples, e.g., hhid2 = 35-352012-2, we see
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh95[hhid2 == <span style="font-style: italic;">"35-352012-2"</span>, .(hhid1 = unique(hhid1)), hhid2]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">hhid2</th>
+<th scope="col" class="org-right">hhid1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">35-352012-2</td>
+<td class="org-right">35-19-352012-2-1</td>
+</tr>
+
+<tr>
+<td class="org-right">35-352012-2</td>
+<td class="org-right">35-20-352012-2-1</td>
+</tr>
+
+<tr>
+<td class="org-right">35-352012-2</td>
+<td class="org-right">35-21-352012-2-1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+In the example above, the <code>hhid2</code> is associated with three <code>hhid1</code>; however, if we look at more columns,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh95[hhid2 == <span style="font-style: italic;">"35-352012-2"</span>, .(UF, ANO, M&#202;S, hhid1, hhid2)]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">UF</th>
+<th scope="col" class="org-right">ANO</th>
+<th scope="col" class="org-right">MÊS</th>
+<th scope="col" class="org-right">hhid1</th>
+<th scope="col" class="org-right">hhid2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">1</td>
+<td class="org-right">35-19-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">2</td>
+<td class="org-right">35-19-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">3</td>
+<td class="org-right">35-19-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">4</td>
+<td class="org-right">35-19-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">5</td>
+<td class="org-right">35-20-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">6</td>
+<td class="org-right">35-20-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">7</td>
+<td class="org-right">35-20-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">8</td>
+<td class="org-right">35-20-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">9</td>
+<td class="org-right">35-21-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">10</td>
+<td class="org-right">35-21-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">1995</td>
+<td class="org-right">11</td>
+<td class="org-right">35-21-352012-2-1</td>
+<td class="org-right">35-352012-2</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+So the entries under <code>hhid2</code> seem to be ordered by month.
+</p>
+
+<p>
+Now, is it true that <i>within a month</i>, hhid2 and hhid1 identify the same household?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh95[, .(n_unique_id1 = length(unique(hhid1))), .(M&#202;S, hhid2)][, .N, n_unique_id1]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">n<sub>unique</sub><sub>id1</sub></th>
+<th scope="col" class="org-right">N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">447844</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Bingo! At least for 1995, this seems to hold. Let&rsquo;s check more generally (this might take ~60 seconds):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+years_check <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> list.files(pme_dir, pattern = <span style="font-style: italic;">"household-(199[1-9]|2000)"</span>,
+                          full.names = <span style="font-weight: bold; text-decoration: underline;">TRUE</span>)
+
+hh_all <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> rbindlist(lapply(years_check, data.table::fread))
+
+hh_all[, hhid1 := paste(UF, V101, V102, V103, V106, sep = <span style="font-style: italic;">"-"</span>)]
+hh_all[, hhid2 := paste(UF, M&#202;S, V102, V103, sep = <span style="font-style: italic;">"-"</span>)]
+hh_all[, .(n_unique_id1 = length(unique(hhid1))), .(ANO, hhid2)][, .N, .(ANO, n_unique_id1)]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">ANO</th>
+<th scope="col" class="org-right">n<sub>unique</sub><sub>id1</sub></th>
+<th scope="col" class="org-right">N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1991</td>
+<td class="org-right">1</td>
+<td class="org-right">445988</td>
+</tr>
+
+<tr>
+<td class="org-right">1992</td>
+<td class="org-right">1</td>
+<td class="org-right">449351</td>
+</tr>
+
+<tr>
+<td class="org-right">1993</td>
+<td class="org-right">1</td>
+<td class="org-right">447479</td>
+</tr>
+
+<tr>
+<td class="org-right">1994</td>
+<td class="org-right">1</td>
+<td class="org-right">436161</td>
+</tr>
+
+<tr>
+<td class="org-right">1995</td>
+<td class="org-right">1</td>
+<td class="org-right">447844</td>
+</tr>
+
+<tr>
+<td class="org-right">1996</td>
+<td class="org-right">1</td>
+<td class="org-right">463306</td>
+</tr>
+
+<tr>
+<td class="org-right">1997</td>
+<td class="org-right">1</td>
+<td class="org-right">471013</td>
+</tr>
+
+<tr>
+<td class="org-right">1998</td>
+<td class="org-right">1</td>
+<td class="org-right">481082</td>
+</tr>
+
+<tr>
+<td class="org-right">1999</td>
+<td class="org-right">1</td>
+<td class="org-right">481770</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-right">1</td>
+<td class="org-right">489365</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note that I included <code>MÊS</code> (month) in <code>hhid2</code>, and now we get an ID that is <i>finer</i> than <code>hhid1</code>! In fact, the above computation was unnecessary, because <code>hhid2</code> identifies entries of the household dataset uniquely:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_all[, .(nobs = .N), .(hhid2, ANO)][, .(freq = .N), .(nobs, ANO)]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">nobs</th>
+<th scope="col" class="org-right">ANO</th>
+<th scope="col" class="org-right">freq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1991</td>
+<td class="org-right">445988</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1992</td>
+<td class="org-right">449351</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1993</td>
+<td class="org-right">447479</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1994</td>
+<td class="org-right">436161</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1995</td>
+<td class="org-right">447844</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1996</td>
+<td class="org-right">463306</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1997</td>
+<td class="org-right">471013</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1998</td>
+<td class="org-right">481082</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1999</td>
+<td class="org-right">481770</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2000</td>
+<td class="org-right">489365</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Interpreted as: &ldquo;for each <code>ANO</code>, there is a single entry per <code>hhid2</code>&rdquo;
+</p>
+</div>
+</div>
+<div id="outline-container-orgd4373ce" class="outline-3">
+<h3 id="orgd4373ce"><span class="section-number-3">3.4</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-10 Thu] </span></span> Weird values in column V10 for years 88-90</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-R">
+countby(hh_old[.year <span style="font-weight: bold; text-decoration: underline;">%in%</span> c(<span style="font-weight: bold; text-decoration: underline;">1988</span>, <span style="font-weight: bold; text-decoration: underline;">1989</span>, <span style="font-weight: bold; text-decoration: underline;">1990</span>)], .x = <span style="font-style: italic;">".state"</span>, bycols = c(<span style="font-style: italic;">"V10"</span>))[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">V10</th>
+<th scope="col" class="org-right">.state = BA</th>
+<th scope="col" class="org-right">.state = MG</th>
+<th scope="col" class="org-right">.state = PE</th>
+<th scope="col" class="org-right">.state = RJ</th>
+<th scope="col" class="org-right">.state = RS</th>
+<th scope="col" class="org-right">.state = SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">273526</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">3986</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1559</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">2424</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">21</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">272683</td>
+</tr>
+
+<tr>
+<td class="org-right">22</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">3228</td>
+</tr>
+
+<tr>
+<td class="org-right">23</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">985</td>
+</tr>
+
+<tr>
+<td class="org-right">24</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1669</td>
+</tr>
+
+<tr>
+<td class="org-right">25</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1714</td>
+</tr>
+
+<tr>
+<td class="org-right">26</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">847</td>
+</tr>
+
+<tr>
+<td class="org-right">27</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">344</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1006</td>
+</tr>
+
+<tr>
+<td class="org-right">29</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">333</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">222620</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">34</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">5439</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">3651</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">41</td>
+<td class="org-right">0</td>
+<td class="org-right">223409</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">42</td>
+<td class="org-right">0</td>
+<td class="org-right">3099</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">56</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">176931</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">59</td>
+<td class="org-right">165541</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">60</td>
+<td class="org-right">542</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org88a53f4" class="outline-3">
+<h3 id="org88a53f4"><span class="section-number-3">3.5</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-11 Fri] </span></span> Month columns in persons datasets: availability and weird values</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+<a id="org07314b3"></a>
+</p>
+
+<p>
+Let&rsquo;s create a variable that flags whether month (as in V105, not V2002) is:
+</p>
+<ol class="org-ol">
+<li>Within reasonable range</li>
+<li>NA</li>
+<li>Outside reasonable range</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[M&#202;S <span style="font-weight: bold; text-decoration: underline;">%in%</span> seq(<span style="font-weight: bold; text-decoration: underline;">1</span>, <span style="font-weight: bold; text-decoration: underline;">12</span>), .flmonth := <span style="font-weight: bold; text-decoration: underline;">0</span> ]
+pp_old[is.na(M&#202;S), .flmonth := <span style="font-weight: bold; text-decoration: underline;">1</span> ]
+pp_old[is.na(.flmonth), .flmonth := <span style="font-weight: bold; text-decoration: underline;">2</span>] <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">none of the above</span>
+
+countby(pp_old, <span style="font-style: italic;">".flmonth"</span>, <span style="font-style: italic;">".year"</span>)[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">.flmonth = 0</th>
+<th scope="col" class="org-right">.flmonth = 1</th>
+<th scope="col" class="org-right">.flmonth = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">1396109</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">1390684</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">1395301</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">1395818</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">1252766</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">1061684</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">1084312</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1991</td>
+<td class="org-right">1096907</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1992</td>
+<td class="org-right">1049652</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1993</td>
+<td class="org-right">1058058</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1994</td>
+<td class="org-right">1077149</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1995</td>
+<td class="org-right">1084463</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1996</td>
+<td class="org-right">1086939</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1997</td>
+<td class="org-right">1099255</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1998</td>
+<td class="org-right">1110199</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1999</td>
+<td class="org-right">1100798</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2000</td>
+<td class="org-right">995819</td>
+<td class="org-right">35</td>
+<td class="org-right">810</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+So we conclude that, in the case of <b>person</b> data:
+</p>
+
+<ol class="org-ol">
+<li>In years &lt;= 1990, there is no month column (=&gt; need to be recovered from household data)</li>
+<li>In years 91-2k, there are minor issues, but probably not worth losing sleep over 845 observations.</li>
+<li><p>
+Also worth noting that in <i>household</i> data, <code>V105~/~MÊS</code> are all &ldquo;reasonable&rdquo;:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">countby(hh_old, .x = <span style="font-style: italic;">"M&#202;S"</span>, bycols = <span style="font-style: italic;">"V105"</span>)[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">V105</th>
+<th scope="col" class="org-right">MÊS = NA</th>
+<th scope="col" class="org-right">MÊS = 1</th>
+<th scope="col" class="org-right">MÊS = 2</th>
+<th scope="col" class="org-right">MÊS = 3</th>
+<th scope="col" class="org-right">MÊS = 4</th>
+<th scope="col" class="org-right">MÊS = 5</th>
+<th scope="col" class="org-right">MÊS = 6</th>
+<th scope="col" class="org-right">MÊS = 7</th>
+<th scope="col" class="org-right">MÊS = 8</th>
+<th scope="col" class="org-right">MÊS = 9</th>
+<th scope="col" class="org-right">MÊS = 10</th>
+<th scope="col" class="org-right">MÊS = 11</th>
+<th scope="col" class="org-right">MÊS = 12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">300087</td>
+<td class="org-right">382847</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">301355</td>
+<td class="org-right">0</td>
+<td class="org-right">383297</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">303433</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">383251</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">303617</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384004</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">306035</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384469</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">305578</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384447</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">306055</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384388</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">292009</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384413</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">293006</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">384251</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">293008</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">385446</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">293209</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">385811</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">293486</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">386735</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6d5dbf4" class="outline-3">
+<h3 id="org6d5dbf4"><span class="section-number-3">3.6</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-13 Sun] </span></span> Malformed <code>V102</code> in persons datasets</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+<a id="org702320d"></a>
+</p>
+
+<p>
+In old PME, variable <code>V102</code> is necessary to merge people and households, and to identify households / people over time.
+</p>
+
+<p>
+In <code>pme1991-2000.doc</code>, variable <code>V102</code> has the following description:
+</p>
+
+<blockquote>
+<p>
+Identifica o código da área de pesquisa.
+Até 11/1995, o número de controle possuía 6 dígitos. A partir daí, passou a ter 8 dígitos. Para compatibilização com as pesquisas mais novas, tornando possível apenas uma descrição do registro num programa de acesso aos dados, o número de controle com 6 dígitos recebe dois espaços após o mesmo, ficando com 8 posições, mantendo-se o mesmo lay-out do registro, independente do ano.
+</p>
+</blockquote>
+
+
+<p>
+Note that we do see that pattern:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1994</span>, .(number_digits = unique(nchar(as.character(V102))))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">number<sub>digits</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">6</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[.year &gt;= <span style="font-weight: bold; text-decoration: underline;">1996</span>, .(number_digits = unique(nchar(as.character(V102))))]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">number<sub>digits</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">8</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Of course, 1995 should have both types (due to staggered waves). HOwever, in the person dataset, it&rsquo;s kinda horrible.
+</p>
+
+<ol class="org-ol">
+<li><p>
+<code>data.table::fread</code> reads the column as character, indicating something wrong.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">pp_old[, typeof(V102)]
+</pre>
+</div>
+
+<pre class="example">
+integer
+</pre></li>
+
+<li><p>
+A regular expression shows entries without proper format:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">n_proper <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> pp_old[grepl(<span style="font-style: italic;">"\\d{6,8}"</span>, V102), .N]
+n_non_na <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> pp_old[!is.na(V102), .N]
+
+n_proper/n_non_na
+</pre>
+</div>
+
+<pre class="example">
+0.999998698885242
+</pre>
+
+
+<p>
+nearly all of the dataset has the proper format. I create a function to flag that.
+</p></li>
+</ol>
+
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="font-weight: bold;">oldpme_flag_V102</span> <span style="font-weight: bold; text-decoration: underline;">&lt;-</span> <span style="font-weight: bold;">function</span>(pp_old) {
+   pp_old[is.na(V102), .fl102 := <span style="font-weight: bold; text-decoration: underline;">1</span>]
+   pp_old[!is.na(V102), .fl102 := ifelse(grepl(<span style="font-style: italic;">"\\d{6,8}"</span>, V102), <span style="font-weight: bold; text-decoration: underline;">0</span>, <span style="font-weight: bold; text-decoration: underline;">2</span>)]
+}
+</pre>
+</div>
+
+
+<p>
+Here is the flag documentation:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Flag</th>
+<th scope="col" class="org-left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">Non-missing V102 with proper format</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">NA V102</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Non-missing V102 with improper format</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7a3c390" class="outline-3">
+<h3 id="org7a3c390"><span class="section-number-3">3.7</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-13 Sun] </span></span> Recycling of household IDs</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+Let&rsquo;s examine the household identified with <code>hhid</code> &ldquo;MG-142-411930-10-3&rdquo;:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[hhid ==  <span style="font-style: italic;">"MG-142-411930-10-3"</span>,
+       .(hhid, .state, day = V2001, month = V2002, year = .year,
+         npeople = V109, npeople_gt10yo = V110)]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">hhid</th>
+<th scope="col" class="org-left">.state</th>
+<th scope="col" class="org-right">day</th>
+<th scope="col" class="org-right">month</th>
+<th scope="col" class="org-right">year</th>
+<th scope="col" class="org-right">npeople</th>
+<th scope="col" class="org-right">npeople<sub>gt10yo</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">16</td>
+<td class="org-right">11</td>
+<td class="org-right">1986</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">21</td>
+<td class="org-right">12</td>
+<td class="org-right">1986</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">25</td>
+<td class="org-right">1</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">22</td>
+<td class="org-right">2</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">15</td>
+<td class="org-right">11</td>
+<td class="org-right">1987</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">20</td>
+<td class="org-right">12</td>
+<td class="org-right">1987</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">24</td>
+<td class="org-right">1</td>
+<td class="org-right">1988</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">21</td>
+<td class="org-right">2</td>
+<td class="org-right">1988</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">22</td>
+<td class="org-right">7</td>
+<td class="org-right">1990</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">26</td>
+<td class="org-right">8</td>
+<td class="org-right">1990</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">23</td>
+<td class="org-right">9</td>
+<td class="org-right">1990</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">21</td>
+<td class="org-right">10</td>
+<td class="org-right">1990</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">21</td>
+<td class="org-right">7</td>
+<td class="org-right">1991</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">25</td>
+<td class="org-right">8</td>
+<td class="org-right">1991</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">22</td>
+<td class="org-right">9</td>
+<td class="org-right">1991</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">MG-142-411930-10-3</td>
+<td class="org-left">MG</td>
+<td class="org-right">20</td>
+<td class="org-right">10</td>
+<td class="org-right">1991</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5576e59" class="outline-3">
+<h3 id="org5576e59"><span class="section-number-3">3.8</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-14 Mon] </span></span> Messy weights</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li><p>
+There are weights in PME that can&rsquo;t be converted to integer.
+</p>
+
+<p>
+I flag them according to the following table.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">flag value</th>
+<th scope="col" class="org-left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">non-missing, convertible to integer</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">missing</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">malformed</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+The tabulated values are as follows:
+</p>
+<div class="org-src-container">
+<pre class="src src-R">pp_old[is.na(PESO), .flag_weight := <span style="font-weight: bold; text-decoration: underline;">1</span>]
+pp_old[!is.na(PESO), .flag_weight := ifelse(grepl(<span style="font-style: italic;">"^\\d+$"</span>, PESO), <span style="font-weight: bold; text-decoration: underline;">0</span>, <span style="font-weight: bold; text-decoration: underline;">2</span>)]
+
+countby(pp_old, <span style="font-style: italic;">".flag_weight"</span>, c(<span style="font-style: italic;">".state"</span>, <span style="font-style: italic;">".year"</span>))[[<span style="font-weight: bold; text-decoration: underline;">1</span>]]
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">.state</th>
+<th scope="col" class="org-right">.year</th>
+<th scope="col" class="org-right">.flag<sub>weight</sub> = 0</th>
+<th scope="col" class="org-right">.flag<sub>weight</sub> = 1</th>
+<th scope="col" class="org-right">.flag<sub>weight</sub> = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">155034</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">140526</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">165668</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">161138</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">151340</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">136002</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">147840</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1991</td>
+<td class="org-right">150346</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1992</td>
+<td class="org-right">145447</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1993</td>
+<td class="org-right">142883</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1994</td>
+<td class="org-right">143716</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1995</td>
+<td class="org-right">147064</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1996</td>
+<td class="org-right">147711</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1997</td>
+<td class="org-right">151469</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1998</td>
+<td class="org-right">151189</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">1999</td>
+<td class="org-right">149381</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BA</td>
+<td class="org-right">2000</td>
+<td class="org-right">34734</td>
+<td class="org-right">0</td>
+<td class="org-right">3922</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">113224</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1991</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1992</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1993</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1994</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1995</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1996</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1997</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1998</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">1999</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">BR</td>
+<td class="org-right">2000</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">241477</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">221947</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">246793</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">239117</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">220738</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">185765</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">188743</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1991</td>
+<td class="org-right">195434</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1992</td>
+<td class="org-right">196593</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1993</td>
+<td class="org-right">196129</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1994</td>
+<td class="org-right">191103</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1995</td>
+<td class="org-right">197862</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1996</td>
+<td class="org-right">201826</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1997</td>
+<td class="org-right">204178</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1998</td>
+<td class="org-right">209019</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">1999</td>
+<td class="org-right">206748</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">MG</td>
+<td class="org-right">2000</td>
+<td class="org-right">214109</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">207489</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">186421</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">199325</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">200860</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">176884</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">149739</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">152014</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1991</td>
+<td class="org-right">162461</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1992</td>
+<td class="org-right">167762</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1993</td>
+<td class="org-right">166392</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1994</td>
+<td class="org-right">150132</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1995</td>
+<td class="org-right">145513</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1996</td>
+<td class="org-right">145980</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1997</td>
+<td class="org-right">148015</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1998</td>
+<td class="org-right">154602</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">1999</td>
+<td class="org-right">154309</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">PE</td>
+<td class="org-right">2000</td>
+<td class="org-right">154387</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">282500</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">258882</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">284104</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">289869</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">254056</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">208741</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">203537</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1991</td>
+<td class="org-right">204690</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1992</td>
+<td class="org-right">193955</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1993</td>
+<td class="org-right">199803</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1994</td>
+<td class="org-right">208712</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1995</td>
+<td class="org-right">207183</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1996</td>
+<td class="org-right">202088</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1997</td>
+<td class="org-right">201852</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1998</td>
+<td class="org-right">196500</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">1999</td>
+<td class="org-right">192688</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RJ</td>
+<td class="org-right">2000</td>
+<td class="org-right">196245</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">215516</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">198624</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">203280</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">208112</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">188574</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">163470</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">167630</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1991</td>
+<td class="org-right">161042</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1992</td>
+<td class="org-right">145784</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1993</td>
+<td class="org-right">147542</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1994</td>
+<td class="org-right">159744</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1995</td>
+<td class="org-right">163286</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1996</td>
+<td class="org-right">163171</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1997</td>
+<td class="org-right">171013</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1998</td>
+<td class="org-right">174266</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">1999</td>
+<td class="org-right">171217</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">RS</td>
+<td class="org-right">2000</td>
+<td class="org-right">168438</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1984</td>
+<td class="org-right">0</td>
+<td class="org-right">294093</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1985</td>
+<td class="org-right">0</td>
+<td class="org-right">271060</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1986</td>
+<td class="org-right">0</td>
+<td class="org-right">296131</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1987</td>
+<td class="org-right">0</td>
+<td class="org-right">296722</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1988</td>
+<td class="org-right">0</td>
+<td class="org-right">261174</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1989</td>
+<td class="org-right">0</td>
+<td class="org-right">217967</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1990</td>
+<td class="org-right">0</td>
+<td class="org-right">224548</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1991</td>
+<td class="org-right">222934</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1992</td>
+<td class="org-right">200111</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1993</td>
+<td class="org-right">205309</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1994</td>
+<td class="org-right">223742</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1995</td>
+<td class="org-right">223555</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1996</td>
+<td class="org-right">226163</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1997</td>
+<td class="org-right">222728</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1998</td>
+<td class="org-right">224623</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">1999</td>
+<td class="org-right">226455</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SP</td>
+<td class="org-right">2000</td>
+<td class="org-right">224829</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org057ec9e" class="outline-3">
+<h3 id="org057ec9e"><span class="section-number-3">3.9</span> <span class="timestamp-wrapper"><span class="timestamp">[2021-06-14 Mon] </span></span> Absent weights for 1984-1990</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li><p>
+It&rsquo;s unfortunate that we don&rsquo;t have weights in the 1984-1990 period. We also don&rsquo;t have population estimates that would allow us to compute the weights.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">hh_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span>, unique(V600)] <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pop. estimate</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">pp_old[.year &lt;= <span style="font-weight: bold; text-decoration: underline;">1990</span>, unique(PESO)]
+</pre>
+</div></li>
+
+<li><p>
+The only reference I have found for that period is the methodology <a href="docs/PME-80-methodology.pdf">document</a> which mentions the table
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">MSU</th>
+<th scope="col" class="org-left">State (my addition)</th>
+<th scope="col" class="org-left">Sampling fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Rio de Janeiro</td>
+<td class="org-left">RJ</td>
+<td class="org-left">1/200</td>
+</tr>
+
+<tr>
+<td class="org-left">Sao Paulo</td>
+<td class="org-left">SP</td>
+<td class="org-left">1/300</td>
+</tr>
+
+<tr>
+<td class="org-left">Porto Alegre</td>
+<td class="org-left">RS</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Belo Horizonte</td>
+<td class="org-left">MG</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Recife</td>
+<td class="org-left">PE</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Salvador</td>
+<td class="org-left">BA</td>
+<td class="org-left">1/100</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged81353" class="outline-2">
+<h2 id="orged81353"><span class="section-number-2">4</span> Tasks</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org145362d" class="outline-3">
+<h3 id="org145362d"><span class="section-number-3">4.1</span> <span class="done DONE">DONE</span> Identify people and households</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>In old PME, had previously used variable <code>V1</code> to identify household, which was apparently completely wrong</li>
+<li>However, found <code>Ribas, R. P., &amp; Soares, S. S. D., Sobre o painel da pesquisa mensal de emprego (pme) do ibge (2008).</code></li>
+<li><p>
+They say that in order to identify households, one needs to use the following variables:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">v035</td>
+<td class="org-left">RM</td>
+<td class="org-left">v010</td>
+</tr>
+
+<tr>
+<td class="org-left">v040</td>
+<td class="org-left">No de controle</td>
+<td class="org-left">v102</td>
+</tr>
+
+<tr>
+<td class="org-left">v050</td>
+<td class="org-left">No de serie</td>
+<td class="org-left">v103</td>
+</tr>
+
+<tr>
+<td class="org-left">v060</td>
+<td class="org-left">Painel</td>
+<td class="org-left">?</td>
+</tr>
+
+<tr>
+<td class="org-left">v063</td>
+<td class="org-left">Grupo rotacional</td>
+<td class="org-left">v106</td>
+</tr>
+</tbody>
+</table></li>
+
+<li>About old PME there are conflicting pieces of information: they say the following should be used</li>
+</ul>
+</div>
+<div id="outline-container-org446b93c" class="outline-4">
+<h4 id="org446b93c"><span class="section-number-4">4.1.1</span> <span class="done DONE">DONE</span> Investigate quality of household/person match using number of people in household</h4>
+</div>
+</div>
+<div id="outline-container-org93ddef4" class="outline-3">
+<h3 id="org93ddef4"><span class="section-number-3">4.2</span> <span class="todo TODO">TODO</span> Track people over time</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>In order for me to do that, I need to have date of birth, age and sex</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgafc3ada" class="outline-3">
+<h3 id="orgafc3ada"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> Old PME: how to get weights</h3>
+</div>
+<div id="outline-container-org2b505b7" class="outline-3">
+<h3 id="org2b505b7"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> Old PME: how to compute totals using weights</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Let \(y_{j}\) be the <b>total</b> of a variable within MSU <code>j</code>
+<ul class="org-ul">
+<li>the total should be computed by simply summing all instances without any weighting</li>
+</ul></li>
+<li>Let \(f_{j}\) be the sampling fraction for MSU
+<ul class="org-ul">
+<li><p>
+In the 1980 methodology <a href="docs/PME-80-methodology.pdf">document</a>, I see a table with the following numbers
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">MSU</th>
+<th scope="col" class="org-left">State (my addition)</th>
+<th scope="col" class="org-left">Sampling fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Rio de Janeiro</td>
+<td class="org-left">RJ</td>
+<td class="org-left">1/200</td>
+</tr>
+
+<tr>
+<td class="org-left">Sao Paulo</td>
+<td class="org-left">SP</td>
+<td class="org-left">1/300</td>
+</tr>
+
+<tr>
+<td class="org-left">Porto Alegre</td>
+<td class="org-left">RS</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Belo Horizonte</td>
+<td class="org-left">MG</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Recife</td>
+<td class="org-left">PE</td>
+<td class="org-left">1/100</td>
+</tr>
+
+<tr>
+<td class="org-left">Salvador</td>
+<td class="org-left">BA</td>
+<td class="org-left">1/100</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+In the 1990 documentation file, I see the following quote
+</p>
+<blockquote>
+<p>
+Os pesos para expansão das amostras da PME são obtidos pela razão entre a estimativa de população residente e o total de moradores (V109) obtido na amostra da PME. O peso é único por região metropolitana e varia a cada mês de pesquisa.
+</p>
+</blockquote></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Then estimate of total is simply \(\hat  Y_{j} = (1 / f_{j}) \hat y_{j}\)
+<ul class="org-ul">
+<li>where \(\hat y_{j}\) is the simple sum over characteristic \(y\) over people within MSU \(j\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0f9ba5c" class="outline-3">
+<h3 id="org0f9ba5c"><span class="section-number-3">4.5</span> Relevant variables and how to find them</h3>
+<div class="outline-text-3" id="text-4-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Old: 1984-2000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Household ID</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">Sex</td>
+<td class="org-left">V202</td>
+</tr>
+
+<tr>
+<td class="org-left">Age</td>
+<td class="org-left">V{206,236,246,256}</td>
+</tr>
+
+<tr>
+<td class="org-left">Person ID</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">State</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">Education</td>
+<td class="org-left">V210</td>
+</tr>
+
+<tr>
+<td class="org-left">Labor market status (will do later)</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">Income (will do  later)</td>
+<td class="org-left">-</td>
+</tr>
+
+<tr>
+<td class="org-left">Occupation</td>
+<td class="org-left">V303</td>
+</tr>
+
+<tr>
+<td class="org-left">Sector</td>
+<td class="org-left">V304 [3 dig], V305 [1 dig]</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org295e25e" class="outline-4">
+<h4 id="org295e25e"><span class="section-number-4">4.5.1</span> Defining employment</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li><p>
+Potentially relevant variables:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Short Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">V301</td>
+<td class="org-left">O que fez na semana</td>
+</tr>
+
+<tr>
+<td class="org-left">V308</td>
+<td class="org-left">tinha carteira assinada</td>
+</tr>
+
+<tr>
+<td class="org-left">V310</td>
+<td class="org-left">horas efetivamente trabalhadas na semana</td>
+</tr>
+
+<tr>
+<td class="org-left">V313</td>
+<td class="org-left">tomou providencia no periodo?</td>
+</tr>
+
+<tr>
+<td class="org-left">V314</td>
+<td class="org-left">tomou providencia antes?</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3b23e57" class="outline-4">
+<h4 id="org3b23e57"><span class="section-number-4">4.5.2</span> <span class="todo TODO">TODO</span> Defining income</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Gustavo Pereira</p>
+<p class="date">Created: 2021-06-17 Thu 15:12</p>
+</div>
+</body>
+</html>
